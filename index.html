@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Song That Never Ends</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.js"
+			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			  crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+      <audio id="track-one" autoplay>
+          <source src="./assets/audio/1.ogg" type='audio/ogg' />
+          Audio not supported.
+      </audio>
+      <br />
+      <audio id="track-two" autoplay>
+          <source src="./assets/audio/2.ogg" type='audio/ogg' />
+          Audio not supported.
+      </audio>
+      <br />
+      <audio id="track-three" autoplay>
+          <source src="./assets/audio/3.ogg" type='audio/ogg' />
+          Audio not supported.
+      </audio>
+      <br />
+      <audio id="track-four" autoplay>
+          <source src="./assets/audio/4.ogg" type='audio/ogg' />
+          Audio not supported.
+      </audio>
+      <div id="info">
+      <img src="./assets/gifs/song-the_t.gif">
+      <img src="./assets/gifs/song-the_h.gif">
+      <img src="./assets/gifs/song-the_e.gif">
+      <br />
+      <img src="./assets/gifs/song-song_s.gif">
+      <img src="./assets/gifs/song-song_o.gif">
+      <img src="./assets/gifs/song-song_n.gif">
+      <img src="./assets/gifs/song-song_g.gif">
+      <br />
+      <img src="./assets/gifs/song-that_t.gif">
+      <img src="./assets/gifs/song-that_h.gif">
+      <img src="./assets/gifs/song-that_a.gif">
+      <img src="./assets/gifs/song-that_t2.gif">
+      <br />
+      <img src="./assets/gifs/song-never_n.gif">
+      <img src="./assets/gifs/song-never_e.gif">
+      <img src="./assets/gifs/song-never_v.gif">
+      <img src="./assets/gifs/song-never_e.gif">
+      <img src="./assets/gifs/song-never_r.gif">
+      <br />
+      <img src="./assets/gifs/song-ends_e.gif">
+      <img src="./assets/gifs/song-ends_n.gif">
+      <img src="./assets/gifs/song-ends_d.gif">
+      <img src="./assets/gifs/song-ends_s.gif">
+      <p>Four tracks, randomly selected. When one ends, another begins.</p>
+
+        <a href="https://github.com/nielsenjared/history-object-100-worlds"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="50px"></a>
+      </div>
+
+
+    </div><!--end container-->
+
+    <script>
+      //enter number of tracks in queue
+      var num = 363;
+
+      $(document).ready(function(event) {
+        //TODO add 'Now playing...', metadata
+        //TODO add track visualizer
+
+        $('#track-one').attr("src", `./assets/audio/${Math.ceil(Math.random() * num)}.ogg`);
+        $('#track-two').attr("src", `./assets/audio/${Math.ceil(Math.random() * num)}.ogg`);
+        $('#track-three').attr("src", `./assets/audio/${Math.ceil(Math.random() * num)}.ogg`);
+        $('#track-four').attr("src", `./assets/audio/${Math.ceil(Math.random() * num)}.ogg`);
+
+
+        $('#track-one').on('ended', function(){
+          $('#track-one').attr("src", `./assets/audio/${Math.ceil(Math.random() * num)}.ogg`);
+        });
+
+        $('#track-two').on('ended', function(){
+          $('#track-two').attr("src", `./assets/audio/${Math.ceil(Math.random() * num)}.ogg`);
+        });
+
+        $('#track-three').on('ended', function(){
+          $('#track-three').attr("src", `./assets/audio/${Math.ceil(Math.random() * num)}.ogg`);
+        });
+
+        $('#track-four').on('ended', function(){
+          $('#track-four').attr("src", `./assets/audio/${Math.ceil(Math.random() * num)}.ogg`);
+        });
+
+      });
+    </script>
+
+  </body>
+</html>
